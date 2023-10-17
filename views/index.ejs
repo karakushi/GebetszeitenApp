@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gebetszeiten</title>
+    <link href="../style/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="prayer-times-container">
+        <h1><%= pageTitle %></h1>
+        <form method="post" action="/">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required />
+            <label for="locationC">Country:</label>
+            <input type="text" id="locationC" name="locationC" required />
+            <button type="submit">Get Prayer Times</button>
+        </form>
+
+        <% if (prayerTimes) { %>
+        <h2>Prayer Times:</h2>
+        <ul class="prayer-times-list">
+            <li class="prayer-time-item">
+                <span class="prayer-name">Fajr:</span>
+                <span class="prayer-time"><%= prayerTimes.Fajr %></span>
+            </li>
+            <li class="prayer-time-item">
+                <span class="prayer-name">Sunrise:</span>
+                <span class="prayer-time"><%= prayerTimes.Sunrise %></span>
+            </li>
+            <li class="prayer-time-item">
+                <span class="prayer-name">Dhuhr:</span>
+                <span class="prayer-time"><%= prayerTimes.Dhuhr %></span>
+            </li>
+            <li class="prayer-time-item">
+                <span class="prayer-name">Asr:</span>
+                <span class="prayer-time"><%= prayerTimes.Asr %></span>
+            </li>
+            <li class="prayer-time-item">
+                <span class="prayer-name">Maghrib:</span>
+                <span class="prayer-time"><%= prayerTimes.Maghrib %></span>
+            </li>
+            <li class="prayer-time-item">
+                <span class="prayer-name">Isha:</span>
+                <span class="prayer-time"><%= prayerTimes.Isha %></span>
+            </li>
+        </ul>
+        <% } %>
+    </div>
+</body>
+</html>
